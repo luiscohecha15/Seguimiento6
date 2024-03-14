@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-public class PersonaDAO {
+public class PersonaDAO extends PersonaDaoo{
     private ArrayList<Persona> personas;
 
     public PersonaDAO() {
@@ -19,14 +19,22 @@ public class PersonaDAO {
         this.personas = personas;
     }
 
-    void save(Persona persona){
+
+    @Override
+    public void save(Persona persona) {
         personas.add(persona);
     }
-    void imprimirDatos(){
+
+    @Override
+    public void imprimirDatos() {
         System.out.println(getPersonas().toString());
     }
-    public void getEdad(){
+
+    @Override
+    public void getEdad() {
         LocalDate fNacimiento = LocalDate.of(personas.getFirst().getDay(), personas.getFirst().getMonth(),personas.getFirst().getYear());
         System.out.println("Tu edad es de " + ChronoUnit.YEARS.between(fNacimiento, LocalDate.now()) + " años.");
+
     }
+
 }
