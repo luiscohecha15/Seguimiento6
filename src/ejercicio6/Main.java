@@ -10,6 +10,7 @@ public class Main {
         ArrayList<Pelicula> peliculas = new ArrayList<>();
         libros.add(new Libro("Luis","Mi vida",20000));
         peliculas.add(new Pelicula("Tron","Luis","Cohecha",10000));
+        TiendaDao dao = new TiendaDao();
 
         boolean flag = true;
         String[] opciones = {"Ver Peliculas", "Ver Libros", "Agregar Pelicula","Agregar Libro","Comprar pelicula","Comprar libro","Ventas info","Salir"};

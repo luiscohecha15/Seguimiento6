@@ -2,7 +2,7 @@ package ejercicio4;
 
 import javax.swing.*;
 
-public class Concesionario {
+public class Concesionario extends ConcesionarioAbs{
     private String nombre, direccion;
     private int cantidadCarros;
 
@@ -35,12 +35,12 @@ public class Concesionario {
     public void setCantidadCarros(int cantidadCarros) {
         this.cantidadCarros = cantidadCarros;
     }
-
+    @Override
     public void agregarCarro(){
         this.cantidadCarros++;
         System.out.println("Carro agregado con Exito!");
     }
-
+    @Override
     public void eliminarCarro(){
         if (this.cantidadCarros > 0){
             this.cantidadCarros--;
@@ -49,7 +49,7 @@ public class Concesionario {
             JOptionPane.showMessageDialog(null, "No hay carros que eliminar");
         }
     }
-
+    @Override
     public void getInf(){
         JOptionPane.showMessageDialog(null,"Nombre: "+getNombre()+"\nDireccion: "+getDireccion()+
                 "\nCarros Disponibles: "+getCantidadCarros(),"Informacion del concesionario",1,null);

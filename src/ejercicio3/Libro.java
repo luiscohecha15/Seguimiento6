@@ -33,7 +33,5 @@ public class Libro {
     public void setPag(int pag) {
         this.pag = pag;
     }
-    public String getInf(){
-        return ("Titulo: "+getTitulo()+"\nAutor: "+getAutor()+"\nPaginas: "+getPag());
-    }
+
 }

@@ -33,8 +33,4 @@ public class Alumno {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    public String getInfo(){
-        return ("Nombre del alumno: "+getNombre()+"\nEdad: "+getEdad()+
-                "\nCurso: "+getCurso());
-    }
 }

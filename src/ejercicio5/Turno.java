@@ -1,8 +1,9 @@
 package ejercicio5;
+import javax.swing.*;
 import java.time.*;
 import java.time.LocalDate.*;
 public class Turno {
-
+    LocalDateTime Hora = LocalDateTime.now();
     private String descripcion;
 
     public Turno(String descripcion) {
@@ -21,9 +22,9 @@ public class Turno {
         this.descripcion = descripcion;
     }
 
-    public String getHoraInicio(){
-        return ("Hora inicio del turno: "+ LocalDateTime.now().getHour()+":"+LocalDateTime.now().getMinute()+
-                "\nHora final turno: "+LocalDateTime.now().plusHours(1).getHour()+":"+LocalDateTime.now().getMinute()+"\nDescripcion: "+
+    public void getHoraInicio(){
+        JOptionPane.showMessageDialog(null, "Hora inicio del turno: "+ Hora.getHour()+":"+Hora.getMinute()+
+                "\nHora final turno: "+Hora.now().plusHours(1).getHour()+":"+Hora.now().getMinute()+"\nDescripcion: "+
                 this.getDescripcion());
     }
 }

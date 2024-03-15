@@ -6,12 +6,12 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Libro> libros = new ArrayList<>();
-        ArrayList<Alumno> alumnos = new ArrayList<>();
-        libros.add(new Libro("Baldor","Aurelio",200));
+        Dao dao = new Dao();
+        dao.libros.add(new Libro("Baldor","Aurelio",200));
+        dao.alumnos.add(new Alumno("Yajaira","Segundo",18));
+        dao.profesor.add(new Profesor("Alberto","Calculo",31));
 
-        Alumno alumno = new Alumno("Yajaira","Segundo",18);
+        dao.getInformacion();
 
-        JOptionPane.showMessageDialog(null,"ALUMNO\n"+alumno.getInfo()+"\n\nLIBRO\n"+libro.getInf());
     }
 }

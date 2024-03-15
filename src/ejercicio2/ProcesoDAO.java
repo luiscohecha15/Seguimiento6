@@ -2,13 +2,14 @@ package ejercicio2;
 
 import javax.swing.*;
 
-public class ProcesoDAO {
+public class ProcesoDAO extends proceso {
     Persona persona = new Persona("1005133059","Luis Cohecha","Bioma");
     CuentaAhorro cuentaAhorro = new CuentaAhorro("2384-7012-8408",1000000,0.6f);
     CuentaCorriente cuentaCorriente = new CuentaCorriente("1235-2472-8482",5000000);
     CuentaCDT cuentaCDT = new CuentaCDT();
     Cliente cliente = new Cliente(persona,cuentaAhorro,cuentaCorriente,cuentaCDT);
 
+    @Override
     public void verSaldo(){
         String[] opciones = {"Ahorro","Corriente","CDT","Salir"};
         boolean flag = true;
@@ -36,6 +37,8 @@ public class ProcesoDAO {
             }
         }while (flag);
     }
+
+    @Override
     public void ingresoAhorros() {
         boolean flag = true;
         double consigna;
@@ -48,6 +51,8 @@ public class ProcesoDAO {
         cuentaAhorro.setSaldo(cuentaAhorro.getSaldo() + consigna);
         System.out.println("Nuevo saldo de cuenta:"+cuentaAhorro.getSaldo());
     }
+
+    @Override
     public void ingresoCorriente() {
         boolean flag = true;
         double consigna;
@@ -60,6 +65,8 @@ public class ProcesoDAO {
         cuentaCorriente.setSaldo(cuentaCorriente.getSaldo() + consigna);
         System.out.println("Nuevo saldo de cuenta:"+cuentaCorriente.getSaldo());
     }
+
+    @Override
     public void retiroCorriente(){
         boolean flag = true;
         double retiro;
@@ -72,6 +79,8 @@ public class ProcesoDAO {
         cuentaAhorro.setSaldo(cuentaAhorro.getSaldo() - retiro);
         System.out.println("Nuevo saldo de cuenta:"+cuentaAhorro.getSaldo());
     }
+
+    @Override
     public void retiroAhorros(){
         boolean flag = true;
         double retiro;
@@ -84,6 +93,8 @@ public class ProcesoDAO {
         cuentaAhorro.setSaldo(cuentaCorriente.getSaldo() - retiro);
         System.out.println("Nuevo saldo de cuenta:"+cuentaCorriente.getSaldo());
     }
+
+    @Override
     public void ingresoCDT(){
         int seteCDT = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el saldo para el CDT"));
         cuentaCDT.setSaldoCDT(seteCDT);
@@ -118,6 +129,8 @@ public class ProcesoDAO {
         System.out.println("Dias: "+cuentaCDT.getTiempoCDT());
         System.out.println("Intereses: "+cuentaCDT.getInteresCDT());
     }
+
+    @Override
     public void cerrarCDT(){
         cuentaCDT.setSaldoCDT(0);
         cuentaCDT.setTiempoCDT(0);
